@@ -16,6 +16,8 @@
 
 [微机系统导论](https://bruno686.github.io/semester3-notes/microcomputer/Notes/chapter_one.html)
 
+[微机运算基础](https://bruno686.github.io/semester3-notes/microcomputer/Notes/chapter_two.html)
+
 ------
 
 ## Organization

@@ -18,6 +18,8 @@
 
 [微机运算基础](https://bruno686.github.io/semester3-notes/microcomputer/Notes/chapter_two.html)
 
+[8086微处理器及其系统](https://bruno686.github.io/semester3-notes/microcomputer/Notes/chapter_three.html)
+
 ------
 
 ## Organization

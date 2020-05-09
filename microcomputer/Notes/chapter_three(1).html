@@ -1,0 +1,509 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>chapter_three(1)</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    padding-bottom: .3em;
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+   padding-bottom: .3em;
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+
+</style>
+</head>
+<body class='typora-export os-windows' >
+<div  id='write'  class = 'is-node'><h3><a name="8086微处理器及其系统" class="md-header-anchor"></a><span>8086微处理器及其系统</span></h3><ol start='' ><li><span>8086/8088微处理器内部结构</span></li><li><span>8086/8088存储器管理</span></li><li><span>8086/8088指令系统</span></li><li><span>8086/8088微处理器外部引脚</span></li><li><span>8086/8088系统的最小/最大工作方式\</span></li></ol><h4><a name="目的" class="md-header-anchor"></a><span>目的</span></h4><p><span>掌握8086/8088CPU的内部功能结构，寄存器和外部引脚，理解8086/8088的最小及最大工作方式，掌握存储器的组织与管理，掌握8086/8088的指令系统。</span></p><h4><a name="重点" class="md-header-anchor"></a><span>重点</span></h4><p><mark><span>寄存器（14个）</span></mark><span>，</span><mark><span>CPU引脚及其功能（40个）</span></mark><span>。最大与最小工作方式，存储器的组织，指令系统。</span></p><h4><a name="难点" class="md-header-anchor"></a><span>难点</span></h4><p><span>总线周期，存储器的组织与分段</span></p><p><span>讲了8086微处理器内部两大部分，EU和BIU，以及两者的构成，为什么要有两者。</span></p><hr /><h3><a name="180868088微处理器内部结构" class="md-header-anchor"></a><span>1.8086/8088微处理器内部结构</span></h3><p><span>定义：8086是16位微处理器，有</span><mark><span>16根数据引脚</span></mark><span>和</span><mark><span>20根地址引脚</span></mark><span>，可以处理8位或16位数据，寻址</span><strong><span>1MB的存储单元</span></strong><span>和</span><strong><span>64KB的I/0端口</span></strong><span>。它的主机较之8位机的性能大约提高了10倍。</span></p><h4><a name="8086cpu的内部结构" class="md-header-anchor"></a><span>8086CPU的内部结构</span></h4><p><span>从执行功能的流程上讲，8086分为两个部分，即</span><mark><span>总线接口单元BIU</span></mark><span>(Bus Interface Unit)和</span><mark><span>执行单元EU</span></mark><span>(Execution Unit)</span></p><p><img src="https://s1.ax1x.com/2020/04/30/JLJoin.png" alt="JLJoin.png" style="zoom: 67%;" /></p><h4><a name="总线接口单元biu" class="md-header-anchor"></a><span>总线接口单元BIU</span></h4><p><mark><span>BIU的功能是负责完成CPU与存储器或I/O端口之间的数据传送</span></mark><span>。</span></p><p><span>①BIU要从内存</span><mark><span>取指令</span></mark><span>送到指令队列；</span></p><p><span>②CPU执行指令时，BIU</span><mark><span>要配合执行单元</span></mark><span>从指定的内存单元或者外设端口中</span><mark><span>取数据</span></mark><span>，</span><mark><span>将数据传送给执行单元</span></mark><span>；</span></p><p><span>③把执行单元的</span><mark><span>操作结果传送</span></mark><span>到指定的内存单元或外设端口中。</span></p><p><img src="https://s1.ax1x.com/2020/04/30/JLdVPJ.jpg" alt="JLdVPJ.jpg" style="zoom: 50%;" /></p><h4><a name="biu的结构" class="md-header-anchor"></a><span>BIU的结构</span></h4><ul><li><span>6字节指令队列缓冲器；</span></li><li><span>20位地址加法器；</span></li><li><span>总线控制电路；</span></li><li><span>16位指令指针IP；</span></li><li><span>4个16位段地址寄存器：CS(代码段寄存器)、DS(数据段寄存器)、SS(堆栈段寄存器)、ES(附加段寄存器)。</span></li></ul><p><strong><span>6字节指令队列缓冲器</span></strong><span>：指令队列为6个字节，且符合“</span><strong><span>先进先出</span></strong><span>”原则</span></p><ol start='' ><li><span>取值时，存满一条指令后，送EU执行；</span></li><li><span>只要空出2个（8086）或1个（8088）指令字节时，BIU自动取值直到填满；</span></li><li><span>取完一个数据，才能取下一个数据</span></li><li><span>当EU执行完转移，调用和返回指令时，则要清楚指令队列缓冲器。并要求BIU从新的地址重新开始取指令。</span></li></ol><p><strong><span>地址加法器</span></strong></p><p><img src="https://s1.ax1x.com/2020/05/01/JXCsg0.png" referrerpolicy="no-referrer" alt="JXCsg0.png"></p><p><strong><span>16位指令指针IP</span></strong><span>：其功能与8位CPU的PC类似。IP中含有BIU要取的</span><mark><span>下一条指令（字节）的偏移地址</span></mark><span>。IP在程序运行中</span><mark><span>自动加1</span></mark><span>修正。</span></p><p><mark><span>总线控制电路</span></mark><span>：发总线控制信号，如对存储器的读写控制信号。</span></p><h3><a name="执行单元eu" class="md-header-anchor"></a><span>执行单元EU</span></h3><p><strong><span>EU只负责执行指令。</span></strong></p><h4><a name="eu的结构" class="md-header-anchor"></a><span>EU的结构</span></h4><ul><li><span>16位算术逻辑单元（ALU）</span></li><li><span>16位标志寄存器F</span></li><li><span>数据暂存寄存器</span></li><li><span>通用寄存器组</span></li><li><span>EU控制电路</span></li></ul><h4><a name="小结" class="md-header-anchor"></a><span>小结</span></h4><p><span>效果：BIU与EU之间既配合又彼此独立，使得两者的操作可以</span><mark><span>非同步</span></mark><span>的进行。体现了“流水线计算机”的初步特点。</span></p><p><span>即：可以在EU执行前一条指令的同时，BIU并行的取一下指令。</span><mark><span>提高了CPU执行指令的效率。提高了总线利用率</span></mark><span>。</span></p><p><img src="https://s1.ax1x.com/2020/05/01/JXi77D.png" alt="JXi77D.png" style="zoom: 67%;" /></p><h4><a name="80868088的寄存器结构" class="md-header-anchor"></a><span>8086/8088的寄存器结构</span></h4><p><img src="https://s1.ax1x.com/2020/05/04/Y9bugP.png" alt="Y9bugP.png" style="zoom: 67%;" /></p><p><strong><span>数据寄存器</span></strong><span>：常用来</span><mark><span>存放参与运算的操作数或运算结果。可以以字或字节的形式访问。</span></mark></p><ul><li><span>AX：累加器，多用于存放中间运算结果。</span></li><li><span>BX：基址寄存器，在间接寻址中用于存放基地址。</span></li><li><span>CX：计数寄存器</span></li><li><span>DX：数据寄存器</span></li></ul><p><strong><span>地址指针寄存器</span></strong><span>（SP，BP）</span></p><ul><li><span>SP：堆栈指针寄存器，其内容为堆栈</span><mark><span>栈顶</span></mark><span>的</span><strong><span>偏移地址</span></strong><span>，用于出栈和入栈指令。</span></li><li><span>BP：堆栈基址指针寄存器，其内容是</span><mark><span>堆栈段中的某一数据区</span></mark><span>基地址的</span><strong><span>偏移地址</span></strong><span>，用于间接寻址中作为基址指针。</span></li></ul><p><strong><span>变址寄存器</span></strong><span>（SI，DI）</span></p><ul><li><span>SI：源变址寄存器，存放源操作数的</span><strong><span>偏移地址</span></strong><span>。</span></li><li><span>DI：目标变址寄存器，存放目的操作数的</span><strong><span>偏移地址</span></strong><span>。</span></li></ul><p><strong><span>标志寄存器</span></strong><span>：6个状态标志位，3个控制标志位</span></p><ul><li><span>CF（Carry Flag）进位标志：执行加减法使最高位产生进位或借位时，CF=1；否则为0.也受带进位循环指令的影响。</span><strong><span>就是看最高位有没有进位的</span></strong><span>。</span></li><li><span>PF（parity flag）奇偶标志：运算结果的低八位中含有偶数个1时，PF=1，否则PF=0。</span><strong><span>低八位有几个1，偶数个1就是，反之则反。另外不要算上最高位的进位。</span></strong></li><li><span>AF（auxiliary carry flag）辅助进位标志位：执行加减法时如若结果的低字节的低四位向高四位有进位或借位。</span><strong><span>低四位有没有向高四位进位，有就是1。</span></strong></li><li><span>ZF（zero flag）零标志：表示算术或逻辑操作的结果是否为零。若为0，ZF为1；否则为0。</span><strong><span>结果是不是0，不是0，就是0。</span></strong></li><li><span>SF（sign flag）符号标志：存放算术运算或逻辑运算执行指令的结果的算术符号，与结果的最高位相同。若数据（结果）用补码表示，则负数为1，正数为0。</span><strong><span>运算结果的最高位是0，就是0。</span></strong></li><li><span>OF（overflow flag）溢出标志：溢出标志用于判断有符号数进行加法或减法时是否出现溢出，OF=1表示有溢出，无符号数的运算不会影响OF。</span></li></ul><p><strong><span>控制标志位</span></strong></p><ul><li><span>DF（direction flag）方向标志：用来控制数据串操作指令的步进方向。</span></li><li><span>IF（interrupt  enable flag）中断允许标志：可屏蔽中断请求信号。</span></li><li><span>TF（trap flag）跟踪标志：用于调试程序。若将TF标志置为1，则CPU处于单步工作方式。</span></li></ul><p><strong><span>段寄存器</span></strong></p><ul><li><span>CS：代码段寄存器</span></li><li><span>DS：数据段寄存器</span></li><li><span>SS：堆栈段寄存器</span></li><li><span>ES：附加段寄存器</span></li></ul><p>&nbsp;</p><h3><a name="280868088存储器管理" class="md-header-anchor"></a><span>2.8086/8088存储器管理</span></h3><p><mark><span>存储器仍按字节组织，每个字节只有唯一的一个地址</span></mark><span>。</span></p><h4><a name="数据的存放" class="md-header-anchor"></a><span>数据的存放</span></h4><ul><li><span>若存放的信息是8位的字节，将按顺序存放；</span></li><li><span>若存放的数位1个字时，则将字的低位字节放在低地址中。</span></li><li><span>若存放的双字形式（这种数一般作为指针），其低位字是被寻址地址的偏移量；高位字是被寻址地址所在的段地址。</span></li></ul><p><span>例：设双字数据1A2B3C4D H存放于首地址为A0000 H的数据区中，则该数据区中地址为A0001 H和A0002 H的单元存放的字节依次为</span><strong><span>3C H</span></strong><span>和</span><strong><span>2B H</span></strong><span>。</span></p><p><span>低位字节是从4D开始，而不是1A。</span></p><p><span>字的存放：规则字，低位字节从偶数地址开始存放。非规则字，低位字节从奇数地址开始存放。</span></p><h4><a name="信息的读取" class="md-header-anchor"></a><span>信息的读取</span></h4><p><span>原则：在同一时间内，CPU从存储器读取的信息总是16位，且总是在存储器以</span><mark><span>偶地址开头的</span></mark><span>两个字节的内容。</span></p><p><span>规则字的读取需要1个总线周期；非规则字的读取需要2个总线周期。</span></p><h4><a name="存储器的分段" class="md-header-anchor"></a><span>存储器的分段</span></h4><ol start='' ><li><p><span>为什么要分段</span></p><p><span>8086/8088CPU的指令指针IP和堆栈指针SP都是16位，故只能寻址64KB的地址空间；而8086、8088有20根地址线可以允许寻址1MB的存储空间。也就是说只能寻址64KB的存储空间，但是呢一共有1MB的存储空间。为了能够寻址1MB存储空间，引入分段的新概念。</span></p></li><li><p><span>如何分段</span></p><p><span>1MB存储空间被分为若干</span><mark><span>逻辑</span></mark><span>段（每段最小可以只有1B，最大只能64KB）。</span><mark><span>每个段的20位起始地址（段基址），即最后四位为0。</span></mark></p><p><mark><span>段基址（20位）≠段地址（段基址的高16位）。</span></mark><mark><span>☆</span></mark></p></li></ol><p><img src="https://s1.ax1x.com/2020/05/04/YCKiWj.png" alt="YCKiWj.png" style="zoom: 67%;" /></p><p><img src="https://s1.ax1x.com/2020/05/04/YCQVaT.png" alt="YCQVaT.png" style="zoom:67%;" /></p><p><span>分段的好处：①解决了16位地址寄存器无法存放20位物理地址的问题。②实现了程序代码的浮动装配的问题。</span></p><h4><a name="实际地址和逻辑地址☆" class="md-header-anchor"></a><span>实际地址和逻辑地址</span><mark><span>☆</span></mark></h4><p><mark><span>实际地址</span></mark><span>：指CPU对存储器进行访问时实际寻址所使用的地址。又称为</span><strong><span>物理地址</span></strong><span>（20位）。</span></p><p><mark><span>逻辑地址</span></mark><span>：在程序和指令中表示的一种地址，</span><strong><span>包括两部分：段地址和偏移地址</span></strong><span>。段地址由相应的16位段寄存器给出；偏移地址是指令寻址时的寄存器组合和位移量之和构成的16位的偏移量。</span></p><p><span>存储器中一个存储单元既可以用物理地址表示，也可以用逻辑地址表示。例如，CS=1200H，IP=100AH，则对应的存储单元可以表示为：物理地址1300AH，逻辑地址1200H：100AH。</span></p><p><span>一个实际地址可以对应着多个逻辑地址，实际地址11245H=11230H+15H=11240H+05H。</span></p><h4><a name="堆栈" class="md-header-anchor"></a><span>堆栈</span></h4><p><mark><span>按照先入后出方式操作的特殊区域</span></mark></p><p><span>堆栈的寻址：SS：SP，堆栈的栈顶是唯一出口。</span></p><p><img src="https://s1.ax1x.com/2020/05/04/YCo82V.png" alt="YCo82V.png" style="zoom: 67%;" /></p><p><span>要注意在存储器中</span><strong><span>从上（↑）至下（↓）是从低位到高位</span></strong><span>。在用寄存器表示实际地址时，</span><strong><span>从左（←）至右（→）是从高位到低位。</span></strong></p><p><img src="https://s1.ax1x.com/2020/05/04/YCTRyT.png" alt="YCTRyT.png" style="zoom:50%;" /></p><p>&nbsp;</p></div>
+</body>
+</html>

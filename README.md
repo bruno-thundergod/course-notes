@@ -1,6 +1,6 @@
 # Semester3-notes
 
-> Notes, solutions, papers
+Notes, solutions, papers
 
 ### Arithmetic
 

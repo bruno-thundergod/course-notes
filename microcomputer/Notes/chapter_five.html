@@ -1,0 +1,509 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>chapter_five</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    padding-bottom: .3em;
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+   padding-bottom: .3em;
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+
+</style>
+</head>
+<body class='typora-export os-windows' >
+<div  id='write'  class = 'is-node'><h3><a name="微机的存储器" class="md-header-anchor"></a><span>微机的存储器</span></h3><ol start='' ><li><span>存储器的分类与组成</span></li><li><span>随机存储器（RAM）2116,6116</span></li><li><span>磁表面存储器 2716</span></li><li><span>光盘存储器</span></li><li><span>只读存储器（ROM）</span></li><li><span>存储器的连接</span></li></ol><hr /><h3><a name="1存储器的分类与组成" class="md-header-anchor"></a><span>1.存储器的分类与组成</span></h3><p><span>按CPU访问方式和存储的信息：内存和外存</span></p><p><span>（1）内存（主存）：CPU可以通过系统总线</span><mark><span>直接访问</span></mark><span>的存储器，用以存储计算机当前正在使用的程序或数据。</span></p><p><span>（2）外存（辅存）：存放相对不常使用的程序或者数据、或者需要长期保存的信息，要回容量大，掉电信息不丢失，速度可以慢些。如磁盘、光盘；</span></p><h4><a name="半导体存储器的分类" class="md-header-anchor"></a><strong><span>半导体存储器的分类</span></strong></h4><p><span>按使用的功能可分为两大类：随机存取存储器RAM（Random Access memory）和只读存储器ROM（Read Only Memory）</span></p><p><img src="https://s1.ax1x.com/2020/05/11/YJnSAI.png" alt="YJnSAI.png" style="zoom:67%;" /></p><p>&nbsp;</p><h4><a name="半导体存储器的组成" class="md-header-anchor"></a><strong><span>半导体存储器的组成</span></strong></h4><p><span>由存储体、地址选择电路、输入输出电路和控制电路组成。</span></p><p><img src="https://s1.ax1x.com/2020/05/11/YJn8u4.png" alt="YJn8u4.png" style="zoom: 50%;" /></p><p><strong><span>存储体</span></strong></p><p><span>存储体是存储1或0信息的电路实体，它由许多存储单元组成，每个存储单元赋予一个编号，称为地址为。而每个存储单元由若干（一般为8位）相同的位组成，每个位需要一个存储元件（基本的存储电路）</span></p><p><span>存储器的地址用一组二进制表示，其地址线的位数n与存储单元的数量N之间的关系为：2</span><sup><span>n</span></sup><span>=N。</span></p><p><img src="https://s1.ax1x.com/2020/05/11/YJuERK.png" alt="YJuERK.png" style="zoom: 50%;" /></p><p><strong><span>地址选择电路</span></strong></p><p><span>包括地址码缓冲器、地址译码器等。地址译码有两种方式：单译码和双译码。</span></p><p><span>单译码方式：只需一个译码器，缺点：引线太多，制造困难。适用于容量小的存储器。</span></p><p><span>双译码方式：需要两个译码器，适用于容量大的存储器。</span></p><p><img src="https://s1.ax1x.com/2020/05/11/YJKZYq.png" alt="YJKZYq.png" style="zoom:67%;" /></p><p>&nbsp;</p><h3><a name="2随机存取存储器ram）" class="md-header-anchor"></a><span>2.随机存取存储器（RAM）</span></h3><p><span>MOS型RAM一般可分为：SRAM和DRAM</span></p><p><span>SRAM（静态RAM）：使用触发器存储信息，存取速度快，但集成度相对较低。</span></p><p><span>DRAM（动态RAM）：使用电容存储信息，存取速度慢，但集成度相对较高。因电容有漏电，所以需要定时刷新，DRAM的刷新是按行进行刷新的。计算机中的主存多以DRAM为主。</span></p><figure><table><thead><tr><th>&nbsp;</th><th><span>存储信息方式</span></th><th><span>存取速度</span></th><th><span>集成度</span></th></tr></thead><tbody><tr><td><span>SRAM</span></td><td><span>触发器</span></td><td><span>快</span></td><td><span>低</span></td></tr><tr><td><span>DRAM</span></td><td><span>电容</span></td><td><span>慢</span></td><td><span>高</span></td></tr></tbody></table></figure><h4><a name="静态ram" class="md-header-anchor"></a><strong><span>静态RAM</span></strong></h4><p><strong><span>SRAM的基本存储电路</span></strong></p><p><span>1.由MOS管组成的RS触发器存储信息</span></p><p><img src="https://s1.ax1x.com/2020/05/11/YJGFgI.png" alt="YJGFgI.png" style="zoom: 50%;" /></p><p><span>2.SRAM基本存储电路的读写</span></p><p><strong><span>静态RAM的组成</span></strong></p><p><span>存储体是由64×64=4096个静态存储电路组成的4K×1的存储器。只有行、列均被选中的某单元存储电路（为1位），才能读出或写入信息。</span></p><p><strong><span>静态RAM芯片举例</span></strong></p><p><span>Intel 6116 是CMOS静态RAM芯片，存储容量为2K×8位，所以是11根地址线。K是2</span><sup><span>10</span></sup></p><h4><a name="动态ram" class="md-header-anchor"></a><span>动态RAM</span></h4><p><span>动态RAM芯片是以电容是否充有电荷来存储信息的。</span></p><p><span>基本单元电路一般由四管、三管或单管组成，以三管和单管较为常用。</span></p><p><strong><span>三管动态RAM基本存储电路</span></strong></p><p><span>基本存储电路：以栅极电容是否充有电荷来存储信息。</span></p><p><img src="https://s1.ax1x.com/2020/05/11/YYZZdI.png" alt="YYZZdI.png" style="zoom:67%;" /></p><p><strong><span>三管动态RAM的刷新</span></strong></p><p><span>即使电源不掉电，Cg的电荷会在几ms内逐渐泄露。而丢失原有的“1”信息。需每隔1ms~3ms定时对Cg充电，这个过程DRAM的刷新。</span></p><p><strong><span>单管动态RAM的基本存储电路</span></strong></p><p><img src="https://s1.ax1x.com/2020/05/11/YYePkq.png" alt="YYePkq.png" style="zoom: 80%;" /></p><p><strong><span>DRAM芯片的技术特点</span></strong></p><p><span>7根地址线如何寻址2</span><sup><span>14</span></sup><span>个内存单元？    地址线分时复用</span></p><p><span>数据输入/输出如何进行？    输入与输出分开，分别通过D</span><sub><span>IN</span></sub><span>，D</span><sub><span>OUT</span></sub><span>引脚。</span></p><p><span>控制信号如何产生？   片选信号：行选信号RAS同时片选信号，在整个读、写周期中均处于有效状态（为0）。</span></p><p><span> </span><span>									</span><span>读写信号：由一个引脚WE控制，为1表示读出，为0表示写入。</span></p><p><span>需要三种电源：V</span><sub><span>BB</span></sub><span>（-5V），V</span><sub><span>CC</span></sub><span>（+5V），V</span><sub><span>DD</span></sub><span>（+12V）</span></p><h4><a name="只读存储器rom）" class="md-header-anchor"></a><span>只读存储器（ROM）</span></h4><p><img src="https://s1.ax1x.com/2020/05/11/YYmzon.png" alt="YYmzon.png" style="zoom: 50%;" /></p><p><strong><span>ROM分类</span></strong></p><ol start='' ><li><span>不可编程掩模式MOS只读存储器（MOS ROM）：事先编好机器码程序。不能再改变，而只能读出。</span></li><li><span>可编程存储器（PROM）：用户可以根据自己需求编制ROM的程序。只能一次编程，编程后，不能再修改。</span></li></ol><p><strong><span>EPROM芯片实例</span></strong></p><p><span>EPROM芯片的容量为2K×8位（11位地址引脚，8位数据引脚）。</span></p><p>&nbsp;</p><h3><a name="3磁表面存储器" class="md-header-anchor"></a><span>3.磁表面存储器</span></h3><h4><a name="磁盘" class="md-header-anchor"></a><span>磁盘</span></h4><p><span>磁盘存储器主要由三部分组成：磁盘，磁盘驱动器，磁盘控制器。</span></p><p><span>磁盘分为两种：若磁盘盘片用铝合金制成，称为硬磁盘；若磁盘盘片用塑料制成，则称为软磁盘。</span></p><p><strong><span>三个时间指标</span></strong></p><ol start='' ><li><span>平均寻道时间：磁头移动到目标数据所在磁道所用的时间。</span></li><li><span>平均潜伏时间：当磁头移动到数据所在磁道后，等待盘片上目标数据继续转到到磁头下的时间，即找到目标数据所在扇区的时间。</span></li><li><span>平均访问时间：硬盘找到某一数据的时间。</span></li><li><span>三者关系：平均访问时间=平均寻道时间+平均潜伏时间。</span></li></ol><p>&nbsp;</p><h3><a name="4存储器的连接" class="md-header-anchor"></a><span>4.存储器的连接</span></h3><p><span>解决两个问题：①如何用容量较小，字长较短的芯片，</span><mark><span>扩充（位数、地址）</span></mark><span>或微机系统所需的存储器。②存储器与CPU的连接方法与应注意的问题。</span></p><p><span>我觉得就是把存储器变宽，变长</span></p><h4><a name="位扩展" class="md-header-anchor"></a><strong><span>位扩展</span></strong></h4><p><span>用1位或4位的存储器芯片构成8位的存储器，可采用</span><mark><span>位并联</span></mark><span>的方法。</span></p><p><img src="https://s1.ax1x.com/2020/05/13/Yd7oKf.png" alt="Yd7oKf.png" style="zoom: 80%;" /></p><p><strong><span>位扩展的原则</span></strong></p><ol start='' ><li><p><span>根据所需存储器的位数计算需要几片存储芯片；</span></p></li><li><p><span>地址线的连接：各个芯片的所有地址线对应并联（与地址总线相连）</span></p></li><li><p><span>数据线的连接：各个芯片的数据线单独引出：（分别接到数据总线对应的位上）</span></p></li><li><p><span>控制线的连接：所有芯片片选信号并联；（连接到地址译码器的输出端）</span></p><p><span>所有芯片读写信号并联。（连接到控制总线的读写控制信号）。</span></p></li></ol><h4><a name="字扩展" class="md-header-anchor"></a><span>字扩展</span></h4><p><span>当扩充存储容量时，采用</span><mark><span>地址串联</span></mark><span>的方法。要用到地址译码电路。</span></p><p><span>用4片16K×8位的存储器芯片组成64K×8位存储器。</span></p><p><img src="https://s1.ax1x.com/2020/05/13/Yd77qS.png" alt="Yd77qS.png" style="zoom:80%;" /></p><p><strong><span>字扩展的原则</span></strong></p><ol start='' ><li><span>根据所需存储器总容量计算需要几片存储芯片</span></li><li><span>各芯片数据线并联，与数据总线相连；</span></li></ol><p><strong><span>芯片地址取值范围的确定</span></strong></p><p><img src="https://s1.ax1x.com/2020/05/13/Yd7XPs.png" alt="Yd7XPs.png" style="zoom: 67%;" /></p><h4><a name="位与字同时扩充" class="md-header-anchor"></a><span>位与字同时扩充</span></h4><p><mark><span>先用位并联</span></mark><span>方法将芯片扩充成为每个存储单元与目标存储器存储单元位数相同的芯片组。</span></p><p><mark><span>再用地址串联</span></mark><span>的方法将芯片组的存储单元个数进行扩充。</span></p><p><mark><span>再用地址串联</span></mark><span>的方法将存储模块扩充成为需要的内存。</span></p><p><span>例1 某计算机有地址线18位，数据线8位，现选用4K×4位的静态RAM芯片组成该机的内存，设基本模块容量为32K×8位。</span></p><ol start='' ><li><p><span>该机允许的最大内存空间？   2</span><sup><span>18</span></sup><span>×8bit=256KB（8bit=1Byte，2</span><sup><span>10</span></sup><span>=1K，所以等于2</span><sup><span>8</span></sup><span>KB）</span></p></li><li><p><span>该机共需几个这样的模块？   256KB/32KB=8</span></p></li><li><p><span>每个模块内包含多少个4K×4位的RAM芯片？内存共需多少个RAM芯片？</span></p><p><span>256KB/（4K×1/2×8）=256KB/2KB=128</span></p></li></ol><p><img src="https://s1.ax1x.com/2020/05/14/YwrAAO.png" alt="YwrAAO.png" style="zoom:67%;" /></p><p><img src="https://s1.ax1x.com/2020/05/14/Ywrt3j.png" alt="Ywrt3j.png" style="zoom:67%;" /></p><h4><a name="存储器与cpu连接应该注意的问题" class="md-header-anchor"></a><span>存储器与CPU连接应该注意的问题</span></h4><p><strong><span>CPU外部总线的负载能力</span></strong></p><ul><li><span>在小系统中，CPU可以与存储器直接相连。</span></li><li><span>较大的存储系统中，连接的存储器芯片片数较多，应采用加缓冲器或总线驱动器等方法来增加总线的驱动能力。</span></li></ul></div>
+</body>
+</html>

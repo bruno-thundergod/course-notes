@@ -1,0 +1,509 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>chapter_three(3)</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    padding-bottom: .3em;
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+   padding-bottom: .3em;
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+
+</style>
+</head>
+<body class='typora-export os-windows' >
+<div  id='write'  class = 'is-node'><h3><a name="480868088微处理器外部引脚" class="md-header-anchor"></a><span>4.8086/8088微处理器外部引脚</span></h3><h4><a name="总线周期" class="md-header-anchor"></a><span>总线周期</span></h4><p><span>任何一个微处理器从存储器中取得指令或者与之传送指令，都需要它的BIU执行一个总线周期。</span></p><p><strong><span>总线周期</span></strong><span>：  CPU通过总线与存储器或I/O端口完成一次数据传输的时间，</span><strong><span>包括4个时钟周期T</span></strong><span>。</span></p><p><strong><span>时钟周期T</span></strong><span>：是一个时钟脉冲的重复周期，是CPU处理动作的基本时间单位，又称为T状态（单片机中称为节拍）。它是由主频来确定，如8086的主频为5MHz，则一个时钟周期为200ns。（计算方法为1/5×10^4）</span></p><p><strong><span>区别：</span></strong><mark><span>只要CPU开始工作，时钟周期T就一直存在；</span></mark></p><p><span>			</span><mark><span>只有当CPU存取指令或数据时，总线周期才存在。</span></mark></p><p><strong><span>指令周期</span></strong><span>：执行一条指令所需的时间，包含1个或多个时钟周期，不同指令的指令周期长短是不同的。</span></p><h4><a name="一个基本的总线周期" class="md-header-anchor"></a><span>一个基本的总线周期</span></h4><p><span>一个基本的总线周期，包括4个时钟周期，分别记为状态T</span><sub><span>1</span></sub><span>~T</span><sub><span>4</span></sub><span>;</span></p><p><span>①T1状态：CPU往多路复用总线发送</span><mark><span>地址信息</span></mark><span>，以选中所要寻址的存储单元或外设端口。</span></p><p><span>②T2状态：CPU从总线上撤销地址，并使总线的</span><mark><span>低16位浮置成高阻状态</span></mark><span>，为传送数据准备。</span><mark><span>高4位（A</span><sub><span>19</span></sub><span>~A</span><sub><span>16</span></sub><span>）用来输出本总线周期状态信息</span></mark><span>。</span></p><p><span>③T3状态：多路总线高4位继续提供状态信息，而低16位（对8088CPU则为低8位)上将出现CPU写出的</span><mark><span>数据</span></mark><span>或者CPU从存储器或端口读入的数据。</span></p><p><span>④T4状态：数据到达目的地，本总线周期</span><mark><span>结束</span></mark><span>。</span></p><p><img src="https://s1.ax1x.com/2020/05/11/YGBmvQ.png" referrerpolicy="no-referrer" alt="YGBmvQ.png"></p><p><mark><span>注意</span></mark><span>：16位数据线，20位地址线，并不是说物理上就有16地址线，20根地址线，事实上，他们用的是同样20根地址线，在前一个时刻发送地址信息，在后一个时刻发送数据信息，这就是</span><mark><span>多路复用</span></mark></p><p><strong><span>等待周期</span></strong></p><p><span>再有些情况下，由于外设或存储器的速度较慢，不能及时地配合CPU传送数据。CPU会在T</span><sub><span>3</span></sub><span>之后自动插入1个或多个附加的时钟周期T，记为T</span><sub><span>W</span></sub><span>。这个T</span><sub><span>W</span></sub><span>就叫作等待状态。</span></p><p><strong><span>空闲周期</span></strong></p><p><span>若CPU在执行一个总线周期后，并不立即执行下一个总线周期，则系统总线会处于空闲状态，此时CPU将执行空闲周期TI。在空闲周期中，可以包含1个或多个时钟周期T。</span></p><p><strong><span>区别</span></strong><span>：空闲周期T</span><sub><span>I</span></sub><span>，  处于两个总线周期之间。</span></p><p><span>			</span><span>等待状态Tw，是一个总线周期的一部分。</span></p><h4><a name="80868088的引脚信号和功能" class="md-header-anchor"></a><span>8086/8088的引脚信号和功能</span></h4><p><img src="https://s1.ax1x.com/2020/05/11/YGBUKJ.png" alt="YGBUKJ.png" style="zoom:67%;" /></p><p><strong><span>4类引线</span></strong></p><ol start='' ><li><p><span>地址/数据总线（16个）：AD</span><sub><span>15</span></sub><span>~AD</span><sub><span>0</span></sub><span>  分时复用</span></p></li><li><p><span>地址/状态总线（4个）：A</span><sub><span>19</span></sub><span>/S</span><sub><span>6</span></sub><span>~A</span><sub><span>16</span></sub><span>/S</span><sub><span>3</span></sub><span> 分时复用</span></p></li><li><p><span>控制总线</span></p><ul><li><span>功能确定的控制信号（9个）</span></li><li><span>功能不确定的控制引脚（8个）</span></li></ul><p><strong><span>三总线结构</span></strong></p></li><li><p><span>电源线和地线（3个）</span></p></li></ol><p><strong><span>地址/数据分时复用总线AD</span><sub><span>15</span></sub><span>~AD</span><sub><span>0</span></sub></strong></p><p><span>39#、2#~16#。这是分时复用的存储器或I/O端口的地址和数据总线。</span></p><p><span>传送地址时单向三态输出，传送数据时双向三态输入输出。</span></p><ul><li><span>T</span><sub><span>1</span></sub><span>状态用来输出要寻址的存储器或I/O端口地址。</span></li><li><span>T</span><sub><span>2</span></sub><span>状态浮置成高阻状态，为传送数据做准备。</span></li><li><span>T</span><sub><span>3</span></sub><span>状态，用于传输数据。</span></li><li><span>T</span><sub><span>4</span></sub><span>状态，结束总线周期。</span></li></ul><p><span>当CPU响应中断或系统总线“保持响应”时，处于高阻状态。</span></p><p><span>区别：在8088中，由于只能传输8位数据，所以，只有AD</span><sub><span>7</span></sub><span>~AD</span><sub><span>0</span></sub><span>8条地址/数据复用线，A</span><sub><span>15</span></sub><span>~A</span><sub><span>8</span></sub><span>只用来输出地址。</span></p><p><strong><span>地址/状态分时复用总线 A</span><sub><span>19</span></sub><span>/S</span><sub><span>6</span></sub><span>~A</span><sub><span>16</span></sub><span>/S</span><sub><span>3</span></sub></strong></p><p><span>35#-38#。三态，分时复用输出总线，即T</span><sub><span>1</span></sub><span>状态输出地址的最高4位，T</span><sub><span>2</span></sub><span>~T</span><sub><span>4</span></sub><span>状态输出状态信息。</span></p><p><span>T1状态：访问存储器时，T1状态输出A</span><sub><span>19</span></sub><span>~A</span><sub><span>16</span></sub><span>送到地址锁存器（8282）锁存，与AD</span><sub><span>15</span></sub><span>~AD</span><sub><span>0</span></sub><span>组成20位的地址信号：访问I/O端口时，A</span><sub><span>19</span></sub><span>~A</span><sub><span>16</span></sub><span>=0。</span></p><p><span>T</span><sub><span>2</span></sub><span>~T</span><sub><span>4</span></sub><span>状态时：S</span><sub><span>6</span></sub><span>为0用来指示8086/8088当前与总线相连，所以，在T</span><sub><span>2</span></sub><span>~T</span><sub><span>4</span></sub><span>状态，S</span><sub><span>6</span></sub><span>总等于0；S</span><sub><span>5</span></sub><span>表明中断允许标志位IF的当前设置；S</span><sub><span>4</span></sub><span>和S</span><sub><span>3</span></sub><span>用来指示当前正在使用哪个段寄存器。</span></p><p><img src="https://s1.ax1x.com/2020/05/11/YGfp7D.png" alt="YGfp7D.png" style="zoom: 80%;" /></p><p><img src="https://s1.ax1x.com/2020/05/11/YGfaEF.png" alt="YGfaEF.png" style="zoom:67%;" /></p><p><img src="https://s1.ax1x.com/2020/05/11/YGfBC9.png" alt="YGfBC9.png" style="zoom:67%;" /></p><p><img src="https://s1.ax1x.com/2020/05/11/YGfgHO.png" alt="YGfgHO.png" style="zoom:67%;" /></p><p><img src="https://s1.ax1x.com/2020/05/11/YGff4H.png" alt="YGff4H.png" style="zoom:67%;" /></p><p><img src="https://s1.ax1x.com/2020/05/11/YGf4Cd.png" alt="YGf4Cd.png" style="zoom:67%;" /></p><p><img src="https://s1.ax1x.com/2020/05/11/YGf58A.png" alt="YGf58A.png" style="zoom:67%;" /></p><p><strong><span>8086CPU引脚的主要特点</span></strong></p><ul><li><p><span>大量采用分时复用技术</span></p></li><li><p><span>有些引脚有引脚33（MN/MX）来控制两种功能</span></p><ol start='' ><li><span>当MN/MX=1时，8086/8088工作于最小方式，在此方式下，全部控制信号由CPU本身提供。</span></li><li><span>当MN/MX=0时，8086/8088工作于最大方式，系统的控制信号由8288总线控制器提供。</span></li></ol></li></ul><p><span>补充：2233H是字数据，</span></p><p><span>字节知（Byte /bait/ n. [C]）是计算机信息技术用于计量存储容量的一种计量单位，通常情况下一字节等于有八位， 也表示一些计算机编程语言中的数据类型和语言字符。</span></p><p><mark><span>&quot;字&quot;由若干个字节构成道，字的位数叫做字长</span></mark><span>，不同档次的机器有不同的字长。字是计算机进行数据处理和运算的版单位。</span></p><p><span>区别：例如一台8位机，它的1个字权就等于1个字节，字长为8位。如果是一台16位机，那么，它的1个字就由2个字节构成，字长为16位。</span></p><p>&nbsp;</p><h3><a name="580868088系统的最小最大工作方式" class="md-header-anchor"></a><span>5.8086/8088系统的最小/最大工作方式</span></h3><p><strong><span>1.最小工作方式</span></strong></p><p><span>系统中只有8086一个微处理器，是一个单微处理器系统。这种系统中，多有的总线控制信号都直接由8086CPU产生，系统中的总线控制逻辑电路被减小到最少。适合于较小规模的使用。当把33#MN/MX接+5V时，8086CPU就处于最小工作方式了。</span></p><p><strong><span>2.最大工作方式</span></strong></p><p><span>系统中包含有两个或多个微处理器，是多微处理器系统。其中必含一个主处理器9096，其他处理器称为协处理器。当把MN/MX接地时，系统处于最大工作方式。多处理器系统方式，控制信号较多，须通过总线控制器与总线相连。</span></p><p><img src="https://s1.ax1x.com/2020/05/11/YG7Ry9.png" alt="YG7Ry9.png" style="zoom:67%;" /></p></div>
+</body>
+</html>

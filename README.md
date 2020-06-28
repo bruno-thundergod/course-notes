@@ -42,7 +42,27 @@ Notes, solutions, papers
 
 [第六章 输入输出与中断](https://bruno686.github.io/semester3-notes/microcomputer/Notes/chapter_six.html)
 
-[第二次实验](https://bruno686.github.io/semester3-notes/microcomputer/Notes/test2.html)
+[实验二 算术运算、逻辑运算指令](https://bruno686.github.io/semester3-notes/microcomputer/Notes/test2.html)
+
+[实验三 串操作指令、程序控制指令、处理器控制指令](https://bruno686.github.io/semester3-notes/microcomputer/Notes/test3.html)
+
+[实验五 算术表达式计算](https://bruno686.github.io/semester3-notes/microcomputer/Notes/test5.html)
+
+[实验六 顺序结构二进制码转换为BCD码](https://bruno686.github.io/semester3-notes/microcomputer/Notes/test6.html)
+
+[实验七 分支程序设计数据块移动](https://bruno686.github.io/semester3-notes/microcomputer/Notes/test7.html)
+
+[实验八 循环程序BCD码转换为二进制码](https://bruno686.github.io/semester3-notes/microcomputer/Notes/test8.html)
+
+[实验九 子程序设计最大最小数的平均值](https://bruno686.github.io/semester3-notes/microcomputer/Notes/test9.html)
+
+[有符号数比较](https://bruno686.github.io/semester3-notes/microcomputer/Notes/test有符号数比较.html)
+
+[找出最大数](https://bruno686.github.io/semester3-notes/microcomputer/Notes/test找最大数.html)
+
+[样例](https://bruno686.github.io/semester3-notes/microcomputer/Notes/微机实验测试题.html)
+
+[简答题](https://bruno686.github.io/semester3-notes/microcomputer/Notes/简答题.html)
 
 ------
 

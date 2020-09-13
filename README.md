@@ -79,3 +79,4 @@ Notes, solutions, papers
 3. [高速缓冲存储器](https://bruno686.github.io/semester3-notes/organization/Notes/chapter4_memory(3).html)
 4. 辅助存储器
 
+第六章 [计算方法](https://bruno686.github.io/semester3-notes/organization/Notes/chapter6_calculation_method.html)
